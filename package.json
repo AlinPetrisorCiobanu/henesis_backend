@@ -7,7 +7,7 @@
     "dev": "nodemon --watch src --ext ts --exec ts-node src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js",
-    "db:migrate": "npx knex migrate:latest",
+    "db:migrate": "knex migrate:latest --knexfile ./knexfile.cjs --env production",
     "db:rollback": "npx knex migrate:rollback"
   },
   "keywords": [],
@@ -22,6 +22,7 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
+    "dotenv": "^17.3.1",
     "express": "^5.2.1",
     "knex": "^3.1.0",
     "mysql2": "^3.19.0"
