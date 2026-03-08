@@ -17,7 +17,9 @@ export async function up(knex) {
 
     // últimas 3 columnas actualizadas correctamente
     table.dateTime("created_at").notNullable().defaultTo(knex.fn.now());
+
     table.dateTime("modified_at").notNullable().defaultTo(knex.fn.now());
+    
     table.dateTime("deleted_at").nullable();
 
   });
