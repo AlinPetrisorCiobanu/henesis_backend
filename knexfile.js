@@ -1,8 +1,8 @@
-module.exports = {
+const config = {
   development: {
     client: "mysql2",
     connection: {
-      host: "127.0.0.1",
+      host: "localhost",
       user: "root",
       password: "",
       database: "henesis"
@@ -12,3 +12,5 @@ module.exports = {
     }
   }
 }
+
+export default config;

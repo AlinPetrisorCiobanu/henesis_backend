@@ -15,7 +15,6 @@ export async function up(knex) {
 
     table.string("password", 255).notNullable();
 
-    // últimas 3 columnas actualizadas correctamente
     table.dateTime("created_at").notNullable().defaultTo(knex.fn.now());
 
     table.dateTime("modified_at").notNullable().defaultTo(knex.fn.now());
