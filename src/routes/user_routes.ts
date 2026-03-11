@@ -1,9 +1,12 @@
-// ruta de los usarios
-import { Router } from "express";
-import { create_user_control } from "../controllers/user_control.js";
+import { Router } from 'express';
+import { UserController } from '../controllers/user_control.js';
 
-const user_routes = Router();
+const router = Router();
 
-user_routes.post("/create_user", create_user_control);
+router.post('/', UserController.createUser);
+router.get('/', UserController.getUsers);
+router.get('/:id', UserController.getUserById);
+router.put('/:id', UserController.updateUser);
+router.delete('/:id', UserController.deleteUser);
 
-export default user_routes;
+export default router;

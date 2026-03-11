@@ -1,9 +1,12 @@
-// tipe para los usuarios
 export interface User {
-  id: string;
-  name: string;
-  user:string;
+  id_user?: number; // Opcional al crear
+  nombre: string;
+  apellidos: string;
+  telefono?: string | null;
   email: string;
+  user: string;
   password: string;
-  role: string;
+  created_at?: Date;
+  modified_at?: Date;
+  deleted_at?: Date | null;
 }
