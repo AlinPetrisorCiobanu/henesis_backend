@@ -1,6 +1,7 @@
 import express from "express";
 import db from "../config/db.js";
 import userRoutes from "../routes/user_routes.js";
+import projectRoutes from "../routes/project_routes.js";
 
 const app = express();
 
@@ -29,5 +30,6 @@ app.use(express.json());
 
 app.use("/users", userRoutes);
 
+app.use("/projects", projectRoutes);
 
 export default app;
