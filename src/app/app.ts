@@ -1,5 +1,6 @@
 import express from "express";
 import db from "../config/db.js";
+import cors from "cors";
 import userRoutes from "../routes/user_routes.js";
 import projectRoutes from "../routes/project_routes.js";
 
@@ -27,6 +28,13 @@ app.get("/", (req, res) => {
 });
 
 app.use(express.json());
+
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://www.henesis.es"
+  ]
+}));
 
 app.use("/users", userRoutes);
 
